@@ -1,0 +1,595 @@
+﻿
+
+21374581854700
+FACULDADE DE TECNOLOGIA DE PRESIDENTE PRUDENTE
+TECNOLOGIA EM ANÃLISE E DESENVOLVIMENTO DE SISTEMAS
+
+
+
+
+ALEXANDRE RICARDO CUSTÃ“DIO DE SOUZA
+NICOLAS DA SILVA SANTOS
+
+
+
+
+
+SafraPLUSSistema Gerenciador Financeiro para Produtores Rurais
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Presidente Prudente â€“ SP
+2026
+2205918952500
+FACULDADE DE TECNOLOGIA DE PRESIDENTE PRUDENTE
+TECNOLOGIA EM ANÃLISE E DESENVOLVIMENTO DE SISTEAS
+
+
+
+
+ALEXANDRE RICARDO CUSTÃ“DIO DE SOUZA
+NICOLAS DA SILVA SANTOS
+
+
+
+
+
+SafraPLUSSistema Gerenciador Financeiro para Produtores Rurais
+
+
+
+
+Trabalho de ConclusÃ£o de Curso apresentado Ã  Faculdade de Tecnologia de Presidente Prudente, como requisito parcial para obtenÃ§Ã£o do diploma de TecnÃ³logo em AnÃ¡lise e Desenvolvimento de Sistemas.
+Orientador(a): Prof. Ma Vanessa dos Anjos Borges
+
+
+
+Presidente Prudente â€“ SP
+2026
+ALEXANDRE RICARDO CUSTÃ“DIO DE SOUZA
+NICOLAS DA SILVA SANTOS
+
+
+
+SafraPLUSSistema Gerenciador Financeiro para Produtores Rurais
+
+
+Trabalho de ConclusÃ£o de Curso apresentado Ã  Faculdade de Tecnologia de Presidente Prudente, como requisito parcial para obtenÃ§Ã£o do tÃ­tulo de TecnÃ³logo em AnÃ¡lise e Desenvolvimento de Sistemas.
+
+
+Aprovado em: xx de xxxxxxxx de 20xx.
+
+BANCA EXAMINADORA
+________________________________________
+Orientador(a): Prof(a). TitulaÃ§Ã£o Nome Completo
+Nome da faculdade que o(a) orientador(a) Ã© vinculado(a)
+Cidade da faculdade que o(a) orientador(a) Ã© vinculado(a)
+
+________________________________________
+Prof(a). TitulaÃ§Ã£o Nome Completo
+Nome da faculdade que o(a) professor(a) Ã© vinculado(a)
+Cidade da faculdade que o(a) professor(a) Ã© vinculado(a)
+
+________________________________________
+Prof(a). TitulaÃ§Ã£o Nome Completo
+Nome da faculdade que o(a) professor(a) Ã© vinculado(a)
+Cidade da faculdade que o(a) professor(a) Ã© vinculado(a)
+RESUMO
+
+SOUZA, Alexandre R. C.; SANTOS, Nicolas S. Sistema Gerenciador Financeiro para Produtores Rurais. Orientador(a): Prof.  Vanessa dos Anjos Borges. Ano 2026. 46 f. Trabalho de ConclusÃ£o de Curso (Tecnologia em AnÃ¡lise e Desenvolvimento de Sistemas) - Faculdade de Tecnologia de Presidente Prudente, Presidente Prudente, SP, 2026.
+O presente Trabalho detalha a EspecificaÃ§Ã£o de Requisitos de Software e o projeto do sistema SafraPLUS, uma plataforma digital estruturada para a gestÃ£o financeira, produtiva e operacional de produtores rurais. O projeto teve como objetivo principal centralizar os dados do agronegÃ³cio em um ambiente integrado, seguro e eficiente, superando as limitaÃ§Ãµes de planilhas de controle e de softwares genÃ©ricos. A elaboraÃ§Ã£o do sistema fundamentou-se na anÃ¡lise das necessidades diÃ¡rias da operaÃ§Ã£o agrÃ­cola, resultando na definiÃ§Ã£o de requisitos funcionais organizados em categorias bÃ¡sicas, fundamentais e de saÃ­da. O trabalho delineou operaÃ§Ãµes vitais para o controle do campo, abarcando o gerenciamento dos dados de safras, o controle de insumos, a administraÃ§Ã£o de maquinÃ¡rio e o manejo de mÃ£o de obra. AlÃ©m disso, estabeleceu a estruturaÃ§Ã£o de uma categorizaÃ§Ã£o financeira personalizada para as demandas do usuÃ¡rio. A metodologia de desenvolvimento empregou uma arquitetura web responsiva, utilizando a linguagem PHP em conjunto com o framework Laravel, alÃ©m do banco de dados MySQL para garantir a persistÃªncia das informaÃ§Ãµes. Durante a construÃ§Ã£o da interface, o projeto aplicou as tecnologias HTML5 e CSS3, apoiadas pela biblioteca Bootstrap, e a linguagem JavaScript. Essa combinaÃ§Ã£o viabilizou uma adaptaÃ§Ã£o fluida do sistema em dispositivos como desktops, tablets e smartphones. A especificaÃ§Ã£o documentou o comportamento do software por meio de diagramas de casos de uso, diagramas de atividades, sequÃªncias de eventos do sistema e um detalhado modelo de classes, conferindo uma estruturaÃ§Ã£o tÃ©cnica robusta ao projeto. O produto arquitetado exigiu o registro minucioso de todos os lanÃ§amentos de despesas e receitas, fixando a associaÃ§Ã£o direta de cada transaÃ§Ã£o a uma safra especÃ­fica. Esse mecanismo lÃ³gico possibilitou o cÃ¡lculo automÃ¡tico e preciso do nÃ­vel de lucratividade de cada colheita. A aplicaÃ§Ã£o englobou, adicionalmente, o controle estrito da movimentaÃ§Ã£o de estoques de insumos, contabilizando adequadamente as entradas por compras e as saÃ­das por utilizaÃ§Ã£o no cultivo. O sistema concebido gerou insumos decisÃ³rios cruciais ao projetar um painel interativo e relatÃ³rios financeiros dinÃ¢micos, como as visualizaÃ§Ãµes da evoluÃ§Ã£o do fluxo de caixa e os grÃ¡ficos de distribuiÃ§Ã£o percentual dos custos operacionais. Por fim, o desenvolvimento deste projeto concluiu que a modelagem adotada materializou uma soluÃ§Ã£o tÃ©cnica pertinente, viÃ¡vel e que atendeu com exatidÃ£o Ã  necessidade de administraÃ§Ã£o financeira isolada e segura exigida pelo agronegÃ³cio moderno.
+Palavras-chave: GestÃ£o financeira; Sistema de informaÃ§Ã£o; AgronegÃ³cio; Engenharia de software.
+ABSTRACT
+
+This Undergraduation Thesis detailed the Software Requirements Specification and the design of the SafraPLUS system, a digital platform structured for the financial, productive, and operational management of rural producers. The project aimed to centralize agribusiness data in an integrated, secure, and efficient environment, overcoming the limitations of control spreadsheets and generic software. The system development was based on an in-depth analysis of daily agricultural operation needs, resulting in the definition of functional requirements organized into basic, fundamental, and output categories. The work outlined vital operations for field control, encompassing the complete management of crop data, input control, machinery administration, and labor management. Furthermore, it established the structure of a personalized financial categorization for each user's specific demands. The development methodology employed a responsive web architecture, using the PHP language along with the Laravel framework, in addition to the MySQL database to ensure data persistence. During the interface construction, the project applied HTML5 and CSS3 technologies, supported by the Bootstrap library, and the JavaScript language. This combination enabled a fluid adaptation of the system across devices such as desktops, tablets, and smartphones. The specification documented the software behavior through use case diagrams, activity diagrams, system event sequences, and a detailed class model, providing a robust technical structure to the project. The architected product required the meticulous recording of all expense and revenue entries, establishing a direct association between each transaction and a specific harvest. This logical mechanism enabled the automatic and precise calculation of the profitability level for each crop. Additionally, the application encompassed strict control over input inventory movements, properly accounting for purchase entries and usage outputs during cultivation. The conceived system generated crucial decision-making inputs by designing an interactive dashboard and dynamic financial reports, such as cash flow evolution visualizations and percentage distribution charts of operational costs. Finally, the development of this project concluded that the adopted modeling materialized a pertinent and viable technical solution that accurately met the need for isolated and secure financial administration required by modern agribusiness.
+Keywords: Financial management; Information system; Agribusiness; Software engineering.
+
+LISTA DE ILUSTRAÃ‡Ã•ES
+
+
+Figura 1 -
+Tela Registrar LanÃ§amento do Custo de Safra 
+16
+Figura 2 -
+Tela Registrar LanÃ§amento da Venda de Safra  
+17
+Figura 3 - 
+Tela Calcular Lucratividade da Safra
+17
+Figura 4 - 
+Tela Registrar MovimentaÃ§Ã£o de Estoque
+18
+Figura 5 - 
+Tela Registrar Custos Operacionais
+18
+Figura 6 - 
+Diagrama de Casos de uso
+19
+
+
+
+
+
+
+
+
+LISTAS DE QUADROS
+
+
+
+Quadro 1
+FunÃ§Ãµes BÃ¡sicas
+12
+Quadro 2
+FunÃ§Ãµes Fundamentais
+13
+Quadro 3
+FunÃ§Ãµes de SaÃ­da
+14
+
+
+
+SUMÃRIO
+ TOC \o "1-4" \h \z \u 
+1. INTRODUÃ‡ÃƒO PAGEREF _Toc225348816 \h 10
+1.1 OBJETIVO PAGEREF _Toc225348817 \h 10
+1.2 ESCOPO PAGEREF _Toc225348818 \h 10
+1.3 DEFINIÃ‡Ã•ES, SIGLAS E ABREVIAÃ‡Ã•ES PAGEREF _Toc225348819 \h 10
+1.4 REFERÃŠNCIAS PAGEREF _Toc225348820 \h 11
+1.5 VISÃƒO GERAL PAGEREF _Toc225348821 \h 11
+2. DESCRIÃ‡ÃƒO GERAL DO PRODUTO PAGEREF _Toc225348822 \h 12
+2.1 ESTUDO DE VIABILIDADE PAGEREF _Toc225348823 \h 12
+2.2 FUNÃ‡Ã•ES DO SISTEMA PAGEREF _Toc225348824 \h 12
+2.3 CARACTERÃSTICAS DO USUÃRIO PAGEREF _Toc225348825 \h 14
+2.4 LIMITES E DEPENDÃŠNCIAS PAGEREF _Toc225348826 \h 14
+2.5 REQUISITOS ADIADOS PAGEREF _Toc225348827 \h 15
+3. REQUISITOS ESPECÃFICOS PAGEREF _Toc225348828 \h 16
+3.1 REQUISITOS DE INTERFACE EXTERNA PAGEREF _Toc225348829 \h 16
+3.1.1 Interfaces de UsuÃ¡rio PAGEREF _Toc225348830 \h 16
+3.1.1.1 â€“ Tela Registrar LanÃ§amento de Custo de Safra PAGEREF _Toc225348831 \h 16
+3.1.1.2 â€“ Tela Registrar LanÃ§amento de Venda de Safra PAGEREF _Toc225348832 \h 17
+3.1.1.3 â€“ Tela Calcular Lucratividade da Safra PAGEREF _Toc225348833 \h 17
+3.1.1.4 â€“ Tela Registrar MovimentaÃ§Ã£o de Estoque PAGEREF _Toc225348834 \h 18
+3.1.1.5 â€“ Tela Registrar Custos Operacionais PAGEREF _Toc225348835 \h 18
+3.1.2 Interfaces de Software PAGEREF _Toc225348836 \h 19
+3.2 DIAGRAMA DE CASOS DE USO PAGEREF _Toc225348837 \h 19
+3.3 ESPECIFICAÃ‡Ã•ES DOS CASOS DE USO PAGEREF _Toc225348838 \h 19
+3.3.1 REQUISITOS NÃƒO FUNCIONAIS PAGEREF _Toc225348839 \h 25
+3.4 DIAGRAMA DE ATIVIDADES DOS CASOS DE USO PAGEREF _Toc225348840 \h 26
+3.4.1 Caso de Uso: Registrar LanÃ§amento de Custos de Safra PAGEREF _Toc225348841 \h 26
+3.4.2 Caso de Uso: Registrar LanÃ§amento de Venda de Safra PAGEREF _Toc225348842 \h 27
+3.4.3 Caso de Uso: Calcular Lucratividade da Safra PAGEREF _Toc225348843 \h 28
+3.4.4 Caso de Uso: Registrar MovimentaÃ§Ã£o de Estoque PAGEREF _Toc225348844 \h 29
+3.4.5 Caso de Uso: Registrar Custo Operacional PAGEREF _Toc225348845 \h 30
+3.5 DIAGRAMA DE SEQUÃŠNCIA DE EVENTOS DO SISTEMA PAGEREF _Toc225348846 \h 31
+3.5.1 Registrar LanÃ§amento de Custo de Safra PAGEREF _Toc225348847 \h 31
+3.5.2 Registrar LanÃ§amento de Venda de Safra PAGEREF _Toc225348848 \h 31
+3.5.3 Calcular Lucratividade da Safra PAGEREF _Toc225348849 \h 32
+3.5.4 Registrar MovimentaÃ§Ã£o de Estoque PAGEREF _Toc225348850 \h 33
+3.5.5 Registrar Custo Operacional PAGEREF _Toc225348851 \h 34
+3.6 MODELO CONCEITUAL PAGEREF _Toc225348852 \h 35
+4. PROJETO DE SOFTWARE PAGEREF _Toc225348853 \h 36
+4.1 DIAGRAMAS DE INTERAÃ‡ÃƒO PAGEREF _Toc225348854 \h 36
+4.1.1 Diagrama de SequÃªncia: Registrar LanÃ§amento de Custos de Safra PAGEREF _Toc225348855 \h 36
+4.1.2 Diagrama de SequÃªncia: Registrar LanÃ§amento de Venda de Safra PAGEREF _Toc225348856 \h 37
+4.1.3 Diagrama de SequÃªncia: Calcular Lucratividade da Safra PAGEREF _Toc225348857 \h 38
+4.1.4 Diagrama de SequÃªncia: Registrar MovimentaÃ§Ã£o de Estoque PAGEREF _Toc225348858 \h 38
+4.1.5 Diagrama de SequÃªncia: Registrar Custo Operacional PAGEREF _Toc225348859 \h 39
+4.2 DIAGRAMA DE CLASSES PAGEREF _Toc225348860 \h 40
+4.3 MODELAGEM DA BASE DE DADOS PAGEREF _Toc225348861 \h 41
+4.4 DIAGRAMA DE PACOTES DA ARQUITETURA LÃ“GICA PAGEREF _Toc225348862 \h 42
+4.5 MODELO NAVEGACIONAL PAGEREF _Toc225348863 \h 43
+4.6 OUTROS LAYOUTS DE TELAS PAGEREF _Toc225348864 \h 43
+4.6.1 Tela do Painel PAGEREF _Toc225348865 \h 43
+4.6.2 Tela de Safras PAGEREF _Toc225348866 \h 43
+4.6.3 Tela de Estoque PAGEREF _Toc225348867 \h 44
+4.6.4 Tela de LanÃ§amentos Financeiros PAGEREF _Toc225348868 \h 44
+4.6.5 Tela do Perfil do UsuÃ¡rio PAGEREF _Toc225348869 \h 45
+APÃŠNDICE A â€“ Manual do UsuÃ¡rio PAGEREF _Toc225348870 \h 46
+
+
+
+
+
+1. INTRODUÃ‡ÃƒO
+
+1.1 OBJETIVO
+
+Este documento consiste em uma ERS (EspecificaÃ§Ã£o de Requisitos de Software) e tem como objetivo detalhar os requisitos funcionais e nÃ£o funcionais do SafraPLUS, um Sistema de GestÃ£o Financeira para Produtores Rurais. O propÃ³sito Ã© servir como um guia claro para a equipe de desenvolvimento e validar o escopo do projeto junto ao cliente, garantindo que o produto final atenda a todas as necessidades de gestÃ£o do produtor rural.
+
+1.2 ESCOPO
+
+O SafraPLUS visa oferecer uma plataforma digital multiusuÃ¡rio integrada, permitindo que produtores rurais faÃ§am a gestÃ£o financeira, produtiva e operacional de suas atividades agrÃ­colas. O sistema garante a segregaÃ§Ã£o dos dados, onde cada produtor tem acesso restrito apenas Ã s suas prÃ³prias informaÃ§Ãµes.
+O sistema permite o gerenciamento de safras, o registro detalhado de custos e receitas (obrigatoriamente vinculados a uma safra) e o controle de recursos essenciais como inventÃ¡rio de insumos, maquinÃ¡rio e mÃ£o de obra, todos especÃ­ficos de cada produtor.
+Para apoiar a tomada de decisÃ£o, a plataforma oferece um painel com relatÃ³rios e grÃ¡ficos gerenciais (fluxo de caixa, distribuiÃ§Ã£o de custos, etc.) que consolidam os dados do produtor logado.
+
+1.3 DEFINIÃ‡Ã•ES, SIGLAS E ABREVIAÃ‡Ã•ES
+
+ERS: EspecificaÃ§Ã£o de Requisitos de Software. 
+SafraPLUS: Sistema de GestÃ£o Financeira para o Produtor Rural. 
+CRUD: AcrÃ´nimo para Create, Read, Update, Delete (Criar, Ler, Atualizar, Excluir). 
+Produtor: O usuÃ¡rio final do sistema, que gerencia os dados de sua prÃ³pria fazenda e nÃ£o tem acesso aos dados de outros produtores. 
+KPI: Key Performance Indicator (Indicador-Chave de Desempenho).
+
+1.4 REFERÃŠNCIAS
+
+NÃ£o hÃ¡.
+
+1.5 VISÃƒO GERAL
+
+Este documento estÃ¡ estruturado em quatro capÃ­tulos. O CapÃ­tulo 1 introduz o propÃ³sito e o escopo do SafraPLUS. O CapÃ­tulo 2 oferece uma descriÃ§Ã£o geral do produto, suas funcionalidades, o perfil dos usuÃ¡rios e as premissas do projeto. O CapÃ­tulo 3 detalha os requisitos especÃ­ficos, incluindo interfaces e as especificaÃ§Ãµes funcionais que guiarÃ£o o desenvolvimento. O CapÃ­tulo 4 apresenta detalhes de implementaÃ§Ã£o que compÃµem o projeto do software.
+
+
+2. DESCRIÃ‡ÃƒO GERAL DO PRODUTO
+
+2.1 ESTUDO DE VIABILIDADE
+
+O SafraPLUS Ã© um sistema de informaÃ§Ã£o independente, desenvolvido para operar como uma aplicaÃ§Ã£o web responsiva. Ele se posiciona como uma ferramenta de gestÃ£o, que centraliza dados financeiros, de produÃ§Ã£o, de estoque e operacionais em uma Ãºnica plataforma, diferenciando-se de planilhas ou sistemas financeiros genÃ©ricos por ser adaptado Ã  realidade e Ã s necessidades do agronegÃ³cio.
+
+2.2 FUNÃ‡Ã•ES DO SISTEMA
+
+As funcionalidades do sistema estÃ£o organizadas em trÃªs categorias: bÃ¡sicas (cadastros e configuraÃ§Ãµes), fundamentais (operaÃ§Ãµes do dia a dia) e de saÃ­da (relatÃ³rios e anÃ¡lises).
+O Quadro 1 apresenta as funÃ§Ãµes bÃ¡sicas do sistema, ou seja, as operaÃ§Ãµes CRUD.
+Quadro 1 â€“ FunÃ§Ãµes BÃ¡sicas.
+IdentificaÃ§Ã£o
+DescriÃ§Ã£o da FunÃ§Ã£o
+RF_B1
+Gerenciar Safras: Permite ao Produtor o CRUD dos dados de cada safra (cultura, Ã¡rea plantada, datas, localizaÃ§Ã£o) vinculada Ã  sua conta.
+RF_B2
+Gerenciar Categorias Financeiras: Permite ao Produtor o CRUD de categorias personalizadas (receitas e despesas) vinculadas Ã  sua conta.
+RF_B3
+Gerenciar Insumos: Permite ao Produtor o CRUD de insumos (sementes, fertilizantes) vinculados Ã  sua conta.
+RF_B4
+Gerenciar MaquinÃ¡rio: Permite ao Produtor o CRUD de mÃ¡quinas e implementos agrÃ­colas vinculados Ã  sua conta
+RF_B5
+Gerenciar MÃ£o de Obra: Permite ao Produtor o CRUD de funcionÃ¡rios e serviÃ§os vinculados Ã  sua conta.
+RF_B6
+Visualizar Dados Consolidados: Permite ao Produtor visualizar relatÃ³rios e painÃ©is que consolidam dados de todos os produtores.
+Fonte: elaborado pelos autores.
+
+O Quadro 2 apresenta as funÃ§Ãµes fundamentais do sistema, ou seja, as implementaÃ§Ãµes das regras de negÃ³cio.
+Quadro 2 â€“ FunÃ§Ãµes Fundamentais.
+IdentificaÃ§Ã£o
+DescriÃ§Ã£o da FunÃ§Ã£o
+RF_F1
+Registrar LanÃ§amento de Custo de Safra: Permite registrar despesas, vinculando-as obrigatoriamente a uma safra e a uma categoria.
+RF_F2
+Registrar LanÃ§amento de Venda de Safra: Permite registrar receitas de vendas de produtos, associando a uma safra e calculando o valor lÃ­quido.
+RF_F3
+Calcular Lucratividade da Safra: Calcula automaticamente a diferenÃ§a entre o total de receitas e despesas de uma safra.
+RF_F4
+Registrar MovimentaÃ§Ã£o de Estoque: Permite registrar a entrada (compra) e a saÃ­da (uso em uma safra) de insumos, atualizando o inventÃ¡rio.
+RF_F5
+Registrar Custo Operacional: Permite lanÃ§ar custos de maquinÃ¡rio (combustÃ­vel, manutenÃ§Ã£o) e de mÃ£o de obra (salÃ¡rios, diÃ¡rias), associando-os a uma safra.
+Fonte: elaborado pelos autores.
+
+O Quadro 3 apresenta as funÃ§Ãµes de saÃ­da do sistema, ou seja, relatÃ³rios, grÃ¡ficos e listagens.
+
+Quadro 3 â€“ FunÃ§Ãµes de SaÃ­da.
+IdentificaÃ§Ã£o
+DescriÃ§Ã£o da FunÃ§Ã£o
+RF_S1
+Gerar RelatÃ³rio de Lucro por Safra: Exibe um resumo financeiro (receitas, despesas, lucro/prejuÃ­zo) de cada safra.
+RF_S2
+Gerar GrÃ¡fico de DistribuiÃ§Ã£o de Custos: Exibe um grÃ¡fico (pizza ou barras) com as categorias de custo mais representativas por safra.
+RF_S3
+Gerar RelatÃ³rio de Fluxo de Caixa: Apresenta a evoluÃ§Ã£o do saldo financeiro ao longo de um perÃ­odo, com filtros por data ou safra.
+RF_S4
+Apresentar Painel Gerencial (Dashboard): Exibe um painel com KPIs, relatÃ³rios comparativos entre safras e anÃ¡lise de custo por hectare.
+Fonte: elaborado pelos autores.
+2.3 CARACTERÃSTICAS DO USUÃRIO
+
+O sistema SafraPLUS possui um tipo de usuÃ¡rio com caracterÃ­sticas e permissÃµes distintas:
+Produtor: Ã‰ o usuÃ¡rio principal do sistema, focado na gestÃ£o de sua prÃ³pria atividade agrÃ­cola. O produtor tem acesso restrito apenas aos dados que cadastra. Suas permissÃµes incluem o CRUD de suas prÃ³prias Safras, Insumos, MaquinÃ¡rios, MÃ£o de Obra e Categorias, alÃ©m de registrar todos os lanÃ§amentos financeiros e operacionais. Este usuÃ¡rio pode ter diferentes nÃ­veis de habilidade com tecnologia, exigindo uma interface intuitiva.
+
+2.4 LIMITES E DEPENDÃŠNCIAS
+
+O sistema dependerÃ¡ de acesso Ã  internet para seu pleno funcionamento.
+A precisÃ£o dos relatÃ³rios e cÃ¡lculos Ã© diretamente dependente da qualidade e da consistÃªncia dos dados inseridos pelo usuÃ¡rio.
+O escopo nÃ£o inclui a integraÃ§Ã£o com sistemas de terceiros (bancos, softwares contÃ¡beis) nesta versÃ£o.
+
+2.5 REQUISITOS ADIADOS
+
+NÃ£o hÃ¡.
+
+
+3. REQUISITOS ESPECÃFICOS
+
+3.1 REQUISITOS DE INTERFACE EXTERNA
+
+3.1.1 Interfaces de UsuÃ¡rio
+
+A interface serÃ¡ web e responsiva, proporcionando uma experiÃªncia de uso consistente em desktops, tablets e smartphones. Os formulÃ¡rios de entrada de dados serÃ£o claros e com validaÃ§Ã£o em tempo real para minimizar erros. Os painÃ©is de relatÃ³rios utilizarÃ£o grÃ¡ficos e tabelas interativas para facilitar a visualizaÃ§Ã£o e a compreensÃ£o dos dados.
+
+3.1.1.1 â€“ Tela Registrar LanÃ§amento de Custo de Safra
+
+Figura 1 â€“ Tela Registrar LanÃ§amento de Custo de Safra
+
+
+
+3.1.1.2 â€“ Tela Registrar LanÃ§amento de Venda de Safra
+
+Figura 2 â€“ Tela Registrar LanÃ§amento de Venda de Safra
+Fonte: SafraPLUS (2026)
+
+3.1.1.3 â€“ Tela Calcular Lucratividade da Safra
+
+Figura 3 â€“ Tela Calcular Lucratividade da Safra
+Fonte: SafraPLUS (2026)
+
+3.1.1.4 â€“ Tela Registrar MovimentaÃ§Ã£o de Estoque
+
+Figura 4 â€“ Tela Registrar MovimentaÃ§Ã£o de Estoque
+Fonte: SafraPLUS (2026)
+
+3.1.1.5 â€“ Tela Registrar Custos Operacionais
+
+Figura 5 â€“ Tela Registrar Custos Operacionais
+Fonte: SafraPLUS (2026)
+
+
+3.1.2 Interfaces de Software
+
+O sistema foi desenvolvido em PHP utilizando o framework Laravel. O banco de dados Ã© o MySQL. A interface do usuÃ¡rio utiliza HTML5, CSS3 com biblioteca Bootstrap e JavaScript para interatividade.
+
+3.2 DIAGRAMA DE CASOS DE USO
+
+O diagrama de casos de uso ilustra as interaÃ§Ãµes do ator do sistema, o Produtor. 
+Figura 6 â€“ Digrama de Casos de Uso
+Fonte: Elaborado pelos autores (2026)
+
+3.3 ESPECIFICAÃ‡Ã•ES DOS CASOS DE USO
+
+Os casos de uso a serem detalhados descreverÃ£o as interaÃ§Ãµes do ator "Produtor" com as funÃ§Ãµes fundamentais do sistema:
+
+UC_01: Registrar LanÃ§amento de Custo de Safra
+Objetivo: Permitir ao produtor registrar uma despesa financeira, garantindo que todo custo seja alocado a uma safra especÃ­fica para o cÃ¡lculo de rentabilidade.
+Ator: Produtor.
+Interessados e Interesses:
+Produtor: Interessado em ter um registro de todos os gastos de uma safra para controlar o orÃ§amento e entender a estrutura de custos do seu negÃ³cio.
+PrÃ©-condiÃ§Ãµes: O produtor estÃ¡ autenticado no sistema. A safra e a categoria de custo relacionadas ao lanÃ§amento jÃ¡ devem existir.
+PÃ³s-condiÃ§Ãµes: Um novo registro de despesa Ã© criado e vinculado Ã  safra selecionada.
+Fluxo Principal (CenÃ¡rio de Sucesso):
+O produtor inicia o processo de registro de um novo custo.
+O produtor seleciona a safra que originou a despesa.
+O produtor classifica a categoria (ex: combustÃ­vel, fertilizante, etc).
+O produtor classifica como â€œdespesaâ€.
+O produtor informa a data, o valor e uma descriÃ§Ã£o para o custo.
+O produtor confirma as informaÃ§Ãµes.
+O sistema valida e armazena o lanÃ§amento, associando-o Ã  safra.
+ExtensÃµes (Alternativas/ExceÃ§Ãµes):
+2a. A safra de destino nÃ£o foi informada: O sistema informa que a associaÃ§Ã£o com uma safra Ã© obrigatÃ³ria e nÃ£o permite continuar.
+Rastreabilidade: RF_F1.
+
+UC_02: Registrar LanÃ§amento de Venda de Safra
+Objetivo: Permitir ao produtor registrar uma receita proveniente da venda de produtos agrÃ­colas, associando-a Ã  safra correspondente para apuraÃ§Ã£o do faturamento.
+Ator: Produtor.
+Interessados e Interesses:
+Produtor: Interessado em registrar todas as fontes de receita para calcular a lucratividade da safra e gerenciar o fluxo de caixa.
+PrÃ©-condiÃ§Ãµes: O produtor estÃ¡ autenticado. A safra da qual o produto se origina jÃ¡ foi cadastrada.
+PÃ³s-condiÃ§Ãµes: Um novo registro de receita Ã© criado, vinculado Ã  safra, e o valor lÃ­quido da transaÃ§Ã£o Ã© calculado.
+Fluxo Principal (CenÃ¡rio de Sucesso):
+O produtor inicia o registro de uma nova venda.
+O produtor seleciona a safra relacionada Ã  venda.
+O produtor classifica a categoria (ex: venda de soja).
+O produtor define como â€œreceitaâ€.
+O produtor informa a data, o valor e uma descriÃ§Ã£o para a venda.
+O produtor confirma o lanÃ§amento.
+O sistema valida e armazena o registro de venda, associando-o Ã  safra.
+ExtensÃµes (Alternativas/ExceÃ§Ãµes):
+3a. Dados financeiros invÃ¡lidos (ex: valor de venda zerado): O sistema informa que os campos de quantidade e valor sÃ£o obrigatÃ³rios e devem ser positivos.
+Rastreabilidade: RF_F2.
+
+UC_03: Calcular Lucratividade da Safra
+Objetivo: Prover ao produtor uma visÃ£o consolidada do resultado financeiro de todas as suas safras, determinando se houve lucro ou prejuÃ­zo em cada ciclo.
+Ator: Produtor.
+Interessados e Interesses:
+Produtor: Interessado em avaliar e comparar o desempenho econÃ³mico de todos os seus ciclos produtivos para tomar decisÃµes estratÃ©gicas.
+PrÃ©-condiÃ§Ãµes: O produtor estÃ¡ autenticado. A safra a ser analisada possui lanÃ§amentos de custos e/ou vendas registrados.
+PÃ³s-condiÃ§Ãµes: O sistema exibe um relatÃ³rio em tabela com o balanÃ§o financeiro (receitas, despesas, lucro/prejuÃ­zo) de cada safra do produtor.
+Fluxo Principal (CenÃ¡rio de Sucesso):
+O produtor acessa Ã  pÃ¡gina "RelatÃ³rios".
+O sistema busca todas as safras que pertencem ao produtor logado.
+Para cada safra, o sistema busca e totaliza todos os lanÃ§amentos de "Receita".
+Para cada safra, o sistema busca e totaliza todos os lanÃ§amentos de "Custo".
+O sistema calcula o resultado (Receitas â€“ Despesas) para cada safra.
+O sistema apresenta a tabela "Lucratividade Consolidada por Safra" com os resultados de todas as safras.
+ExtensÃµes (Alternativas/ExceÃ§Ãµes):
+1a. O produtor nÃ£o possui safras ou lanÃ§amentos: O sistema exibe a tabela com uma mensagem "Nenhum dado financeiro encontrado...".
+Rastreabilidade: RF_S1, RF_S4
+
+UC_04: Registrar MovimentaÃ§Ã£o de Estoque
+Objetivo: Permitir ao produtor controlar o inventÃ¡rio de insumos, registrando tanto a aquisiÃ§Ã£o (entrada) quanto a utilizaÃ§Ã£o no campo (saÃ­da), garantindo que o custo do insumo seja alocado Ã  safra.
+Ator: Produtor.
+Interessados e Interesses:
+Produtor: Interessado em gerenciar o estoque para planejamento de compras e em associar o custo real dos insumos utilizados em cada safra.
+PrÃ©-condiÃ§Ãµes: O produtor estÃ¡ autenticado. Os insumos estÃ£o previamente cadastrados no sistema.
+PÃ³s-condiÃ§Ãµes: O saldo do insumo no inventÃ¡rio Ã© atualizado. Um registo da movimentaÃ§Ã£o Ã© criado.
+Fluxo Principal (CenÃ¡rio de Sucesso):
+O produtor inicia uma movimentaÃ§Ã£o de estoque.
+O produtor define o tipo de movimentaÃ§Ã£o: "Entrada por Compra" ou "SaÃ­da para Uso".
+Se for "Entrada por Compra": a. O produtor seleciona o insumo, informa a quantidade adquirida e o valor da compra. b. O sistema atualiza o saldo do insumo em estoque (adicionando a quantidade comprada).
+Se for "SaÃ­da para Uso": a. O produtor seleciona o insumo e a safra onde serÃ¡ utilizado. b. O produtor informa a quantidade utilizada. c. O sistema deduz a quantidade do saldo em estoque.
+O produtor confirma a operaÃ§Ã£o.
+O sistema valida e armazena o registro de movimentaÃ§Ã£o de estoque.
+ExtensÃµes (Alternativas/ExceÃ§Ãµes):
+4b. Saldo insuficiente para a saÃ­da: O sistema informa que a quantidade em estoque Ã© menor que a solicitada e bloqueia a operaÃ§Ã£o.
+Rastreabilidade: RF_F4.
+
+UC_05: Registrar Custo Operacional
+Objetivo: Permitir ao produtor registrar despesas operacionais (como combustÃ­vel, manutenÃ§Ã£o ou diÃ¡rias) e alocÃ¡-las a uma safra.
+Ator: Produtor.
+Interessados e Interesses:
+Produtor: Interessado em detalhar todos os tipos de custos que compÃµem o custo total de produÃ§Ã£o de uma safra.
+PrÃ©-condiÃ§Ãµes: O produtor estÃ¡ autenticado. A safra na qual o custo serÃ¡ alocado jÃ¡ deve existir.
+PÃ³s-condiÃ§Ãµes: Um registro de custo operacional Ã© criado e associado Ã  safra selecionada.
+Fluxo Principal (CenÃ¡rio de Sucesso):
+O produtor inicia o registro de um custo operacional.
+O produtor seleciona a safra na qual o custo deve ser alocado.
+O produtor informa os detalhes do custo como descriÃ§Ã£o, data e valor.
+O produtor seleciona o maquinÃ¡rio e/ou mÃ£o de obra.
+O produtor confirma o lanÃ§amento.
+O sistema valida e armazena a despesa, vinculando-a Ã  safra.
+ExtensÃµes (Alternativas/ExceÃ§Ãµes):
+5a. Safra nÃ£o informada: O sistema informa que a alocaÃ§Ã£o do custo a uma safra Ã© obrigatÃ³ria.
+Rastreabilidade: RF_F5.
+
+3.3.1 REQUISITOS NÃƒO FUNCIONAIS
+
+Desempenho: O sistema deve carregar as principais telas e relatÃ³rios em menos de 3 segundos em uma conexÃ£o de internet banda larga padrÃ£o.
+SeguranÃ§a: O acesso ao sistema serÃ¡ controlado por autenticaÃ§Ã£o de usuÃ¡rio e senha. As senhas serÃ£o armazenadas de forma criptografada (hashed).
+Usabilidade: A interface deve ser intuitiva, exigindo um mÃ­nimo de treinamento. As operaÃ§Ãµes mais comuns devem ser acessÃ­veis em no mÃ¡ximo trÃªs cliques a partir da tela inicial.
+Confiabilidade: O sistema deve ter uma disponibilidade de 99% do tempo, excluindo-se janelas de manutenÃ§Ã£o programadas.
+
+
+
+3.4 DIAGRAMA DE ATIVIDADES DOS CASOS DE USO
+
+3.4.1 Caso de Uso: Registrar LanÃ§amento de Custos de Safra
+
+
+
+3.4.2 Caso de Uso: Registrar LanÃ§amento de Venda de Safra
+
+
+
+3.4.3 Caso de Uso: Calcular Lucratividade da Safra
+
+
+
+
+
+
+3.4.4 Caso de Uso: Registrar MovimentaÃ§Ã£o de Estoque
+
+
+
+3.4.5 Caso de Uso: Registrar Custo Operacional
+
+
+
+3.5 DIAGRAMA DE SEQUÃŠNCIA DE EVENTOS DO SISTEMA
+
+3.5.1 Registrar LanÃ§amento de Custo de Safra
+
+ 
+3.5.2 Registrar LanÃ§amento de Venda de Safra
+
+
+
+
+
+3.5.3 Calcular Lucratividade da Safra
+
+
+
+
+3.5.4 Registrar MovimentaÃ§Ã£o de Estoque
+
+
+
+
+
+
+
+
+3.5.5 Registrar Custo Operacional
+
+
+
+
+
+
+3.6 MODELO CONCEITUAL
+
+
+
+4. PROJETO DE SOFTWARE
+
+4.1 DIAGRAMAS DE INTERAÃ‡ÃƒO
+
+4.1.1 Diagrama de SequÃªncia: Registrar LanÃ§amento de Custos de Safra
+
+
+
+4.1.2 Diagrama de SequÃªncia: Registrar LanÃ§amento de Venda de Safra
+
+
+
+4.1.3 Diagrama de SequÃªncia: Calcular Lucratividade da Safra
+
+
+
+4.1.4 Diagrama de SequÃªncia: Registrar MovimentaÃ§Ã£o de Estoque
+
+
+
+4.1.5 Diagrama de SequÃªncia: Registrar Custo Operacional
+
+
+
+
+4.2 DIAGRAMA DE CLASSES
+
+
+
+
+4.3 MODELAGEM DA BASE DE DADOS
+
+
+
+
+4.4 DIAGRAMA DE PACOTES DA ARQUITETURA LÃ“GICA
+
+
+
+
+4.5 MODELO NAVEGACIONAL
+
+
+
+4.6 OUTROS LAYOUTS DE TELAS
+
+4.6.1 Tela do Painel
+
+
+
+4.6.2 Tela de Safras
+
+
+
+4.6.3 Tela de Estoque
+
+
+
+4.6.4 Tela de LanÃ§amentos Financeiros
+
+
+
+
+4.6.5 Tela do Perfil do UsuÃ¡rio
+
+
+
+
+APÃŠNDICE A â€“ Manual do UsuÃ¡rio
+
+O vÃ­deo explicativo referente ao Manual do UsuÃ¡rio do SafraPLUS encontra-se disponÃ­vel para visualizaÃ§Ã£o no seguinte endereÃ§o do YouTube:www.youtube.com
+

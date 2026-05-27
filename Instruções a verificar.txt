@@ -1,0 +1,91 @@
+Escopo
+
+ O Sistema de Gestão Financeira para Produtores Rurais tem como objetivo oferecer aos produtores rurais uma plataforma digital de gestão financeira e produtiva voltada ao acompanhamento detalhado de suas safras, despesas e receitas. Através de um ambiente simples e intuitivo, o produtor poderá se cadastrar na plataforma, informando dados como nome, CPF ou CNPJ, propriedade, cultura principal, e-mail e telefone, podendo também realizar alterações e exclusão de suas informações sempre que necessário.
+
+ O sistema permitirá ainda o gerenciamento completo das safras, possibilitando o registro da cultura plantada, área destinada, datas de início e fim do cultivo, bem como a localização geográfica de cada plantio.
+
+ Outro recurso básico essencial será a configuração de categorias personalizadas para lançamentos financeiros, facilitando a classificação de despesas e receitas em grupos como sementes, insumos, vendas, transporte, entre outros.
+
+ Entre as funcionalidades fundamentais da plataforma, destaca-se a possibilidade de registrar lançamentos de custos vinculados a uma safra específica. Esses registros incluirão informações como a categoria do custo, data, valor e descrição, sendo obrigatório o vínculo com uma safra previamente cadastrada. Da mesma forma, será possível inserir lançamentos de vendas de produtos agrícolas, informando safra correspondente, produto vendido, quantidade, valor de venda, data da transação e, se desejado, o nome do comprador. O sistema considerará possíveis descontos ou taxas para apresentar o valor líquido das vendas. Com base nesses dados, será possível calcular automaticamente a lucratividade de cada safra, apresentando os totais de receitas e despesas e indicando o lucro ou prejuízo obtido.
+
+ Para apoiar a tomada de decisão e a gestão financeira, o sistema também oferecerá uma funcionalidade de visualização do fluxo de caixa. O produtor poderá selecionar um período e, opcionalmente, uma safra específica, e visualizar um demonstrativo com o total de entradas e saídas, organizadas por data ou categoria. Essa visão permitirá o acompanhamento em tempo real da saúde financeira do empreendimento agrícola.
+
+ Complementando essas funcionalidades, a plataforma disponibilizará relatórios e gráficos que sintetizam os dados financeiros de forma clara e acessível. O relatório de lucro por safra exibirá uma tabela com as culturas cultivadas, valores de receitas, despesas e o lucro ou prejuízo associado a cada safra. Já o gráfico de distribuição de custos por categoria apresentará uma visualização em barras com os grupos de custo mais relevantes, facilitando a identificação dos principais centros de gasto.
+ Por fim, será possível acompanhar a evolução do saldo financeiro ao longo do tempo por meio de um gráfico de linha, que indicará o saldo acumulado por dia, semana ou mês, a partir de um intervalo de datas definido pelo usuário.
+
+Detalhamentos
+O Sistema de Gestão Financeira para Produtores Rurais tem como objetivo:
+- oferecer aos produtores rurais uma plataforma digital de gestão financeira e produtiva voltada ao acompanhamento detalhado de suas safras, despesas e receitas.
+
+Através de um ambiente simples e intuitivo, o produtor poderá:
+- se cadastrar na plataforma, informando dados como:
+- nome
+- CPF ou CNPJ, 
+- e-mail
+- telefone
+- propriedade
+- cultura principal
+
+Poderá também realizar:
+- alteração, ou
+- exclusão
+de suas informações sempre que necessário.
+
+O sistema permitirá:
+- o gerenciamento completo das safras
+- o registro da cultura plantada
+- área destinada
+- datas de início do cultivo
+- data de fim do cultivo
+- localização geográfica de cada plantio.
+
+Outro recurso básico essencial será a configuração de:
+- categorias personalizadas para lançamentos financeiros
+- classificação de despesas e receitas em grupos como sementes, insumos, vendas, transporte, entre outros.
+
+Entre as funcionalidades fundamentais da plataforma, destaca-se a:
+- possibilidade de registrar lançamentos de custos vinculados a uma safra específica.
+Esses registros incluirão informações como:
+- a categoria do custo
+- data
+- valor
+- descrição
+- obrigatório o vínculo com uma safra previamente cadastrada.
+
+Da mesma forma, será possível inserir lançamentos de:
+- vendas de produtos agrícolas, informando safra correspondente
+- produto vendido
+- quantidade
+- valor de venda
+- data da transação
+- e, se desejado, o nome do comprador.
+
+O sistema considerará:
+- possíveis descontos ou taxas para apresentar o valor líquido das vendas.
+Com base nesses dados, será possível:
+- calcular automaticamente a lucratividade de cada safra
+- apresentar os totais de receitas e despesas
+- indicar o lucro ou prejuízo obtido.
+
+Para apoiar a tomada de decisão e a gestão financeira, o sistema também oferecerá uma funcionalidade de:
+- visualização do fluxo de caixa 
+- Por período
+- opcionalmente, uma safra específica
+- visualizar um demonstrativo com o total de entradas e saídas, organizadas por data ou categoria.
+- Permitir o acompanhamento em tempo real da saúde financeira do empreendimento agrícola.
+
+Complementando essas funcionalidades, a plataforma disponibilizará:
+- relatórios e gráficos que sintetizam os dados financeiros de forma clara e acessível.
+
+O relatório de lucro por safra exibirá:
+- uma tabela com as culturas cultivadas
+- valores de receitas
+- valores das despesas
+- o lucro ou prejuízo associado a cada safra.
+
+Já o gráfico de distribuição de custos por categoria apresentará:
+- visualização em  barras com os grupos de custo mais relevantes, facilitando a identificação dos principais centros de custo.
+
+Por fim, será possível acompanhar a evolução do saldo financeiro ao longo do tempo por meio de um gráfico de linha, que indicará:
+- o saldo acumulado por dia, semana ou mês
+- a partir de um intervalo de datas definido pelo usuário.

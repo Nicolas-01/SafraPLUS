@@ -1,0 +1,246 @@
+@extends('layouts.app')
+
+@section('header_title', 'Safras')
+
+@section('content')
+
+<div class="mb-6 flex justify-end">
+    <a href="{{ route('safras.create') }}" class="px-5 py-2.5 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 transition-colors shadow-sm flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        Nova Safra
+    </a>
+</div>
+
+<div class="mb-6">
+    <p class="text-sm text-gray-500">Gerencie o planejamento e o histórico de suas culturas.</p>
+</div>
+
+@if (session('error'))
+<div class="mb-6 p-4 rounded-xl bg-red-50 text-red-700 border border-red-200 flex items-center gap-3">
+    <svg class="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    {{ session('error') }}
+</div>
+@endif
+
+@if (session('success'))
+<div class="mb-6 p-4 rounded-xl bg-green-50 text-green-700 border border-green-200 flex items-center gap-3">
+    <svg class="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+    {{ session('success') }}
+</div>
+@endif
+
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden relative">
+    <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-500"></div>
+    <div class="overflow-x-auto pl-1.5">
+        <!-- Desktop Table View -->
+        <table class="w-full text-left border-collapse hidden md:table">
+            <thead>
+                <tr class="bg-gray-50 border-b border-gray-100 text-xs uppercase tracking-wider text-gray-500 font-bold">
+                    <th class="px-6 py-4">Cultura</th>
+                    @can('is-admin')
+                    <th class="px-6 py-4">Produtor</th>
+                    @endcan
+                    <th class="px-6 py-4">Área (ha)</th>
+                    <th class="px-6 py-4">Propriedade</th>
+                    <th class="px-6 py-4">Localização</th>
+                    <th class="px-6 py-4">Período</th>
+                    <th class="px-6 py-4 text-right sticky right-0 bg-gray-50 z-10 shadow-[-12px_0_15px_-3px_rgba(0,0,0,0.05)]">Ações</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 text-sm">
+                @forelse ($safras as $safra)
+                <tr class="hover:bg-gray-50/50 transition-colors group">
+                    <td class="px-6 py-4 font-semibold text-gray-900">
+                        {{ $safra->cultura }}
+                    </td>
+                    @can('is-admin')
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            @php
+                                $nomeProd = $safra->produtor->nome ?? 'N/A';
+                                $primeiraLetra = $nomeProd !== 'N/A' ? strtoupper(substr($nomeProd, 0, 1)) : '?';
+                            @endphp
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-600 shrink-0">
+                                {{ $primeiraLetra }}
+                            </div>
+                            <span class="text-gray-700 font-medium">{{ $nomeProd }}</span>
+                        </div>
+                    </td>
+                    @endcan
+                    <td class="px-6 py-4 text-gray-600">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-100">
+                            {{ number_format($safra->area_plantada, 2, ',', '.') }} ha
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 font-medium text-gray-900">
+                         {{ $safra->propriedade ?: 'N/A' }}
+                    </td>
+                    <td class="px-6 py-4 text-gray-600">
+                        @if($safra->localizacao)
+                            <a href="#" onclick="abrirMapaPlantio(event, '{{ $safra->localizacao }}')" class="text-emerald-600 hover:text-emerald-700 flex items-center gap-1 font-medium transition-colors" title="Ver no mapa">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                Ver Mapa
+                            </a>
+                        @else
+                            -
+                        @endif
+                    </td>
+                    <td class="px-6 py-4 text-gray-600">
+                        <div class="flex flex-col">
+                            <span>Início: {{ \Carbon\Carbon::parse($safra->data_inicio)->format('d/m/Y') }}</span>
+                            <span class="text-xs {{ $safra->data_fim ? 'text-gray-500' : 'text-emerald-500 font-medium' }}">
+                                Fim: {{ $safra->data_fim ? \Carbon\Carbon::parse($safra->data_fim)->format('d/m/Y') : 'Em Andamento' }}
+                            </span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-right sticky right-0 bg-white group-hover:bg-gray-50/50 z-10 shadow-[-12px_0_15px_-3px_rgba(0,0,0,0.05)]">
+                        <div class="flex items-center justify-end gap-2">
+                            <a href="{{ route('safras.edit', $safra->id) }}" class="p-2 text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors shadow-sm" title="Editar">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                            </a>
+                            <form action="{{ route('safras.destroy', $safra->id) }}" method="POST" class="inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="p-2 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg transition-colors shadow-sm" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir esta safra e todos os seus lançamentos?')">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="@can('is-admin') 7 @else 6 @endcan" class="px-6 py-12 text-center">
+                        <div class="flex flex-col items-center justify-center text-gray-500">
+                            <svg class="w-12 h-12 text-gray-300 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
+                            <span class="text-sm font-medium">Nenhuma safra cadastrada.</span>
+                        </div>
+                    </td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+
+        <!-- Mobile Card View -->
+        <div class="md:hidden flex flex-col p-4 gap-4 bg-gray-50/50">
+            @forelse ($safras as $safra)
+            <div class="bg-white rounded-xl p-4 border border-gray-100 flex flex-col shadow-sm relative">
+                <!-- Ações Absolute Top Right -->
+                <div class="absolute top-4 right-4 flex gap-2">
+                    <a href="{{ route('safras.edit', $safra->id) }}" class="p-1.5 text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors" title="Editar">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    </a>
+                    <form action="{{ route('safras.destroy', $safra->id) }}" method="POST" class="inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="p-1.5 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg transition-colors" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir esta safra e todos os seus lançamentos?')">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="mb-2 pr-16">
+                    <h4 class="font-bold text-gray-900 text-lg leading-tight">{{ $safra->cultura }}</h4>
+                    <p class="text-xs text-gray-800 font-semibold mt-1 flex items-center gap-1">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        {{ $safra->propriedade ?: 'Sem Propriedade' }}
+                    </p>
+                    <div class="mt-0.5">
+                        @if($safra->localizacao)
+                            <a href="#" onclick="abrirMapaPlantio(event, '{{ $safra->localizacao }}')" class="text-xs text-emerald-600 hover:text-emerald-700 flex items-center gap-1 font-medium transition-colors">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                Ver no Mapa
+                            </a>
+                        @else
+                            <p class="text-xs text-gray-500 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                -
+                            </p>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-100 uppercase tracking-wider">
+                        {{ number_format($safra->area_plantada, 2, ',', '.') }} ha
+                    </span>
+                    <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md {{ $safra->data_fim ? 'bg-gray-100 text-gray-600' : 'bg-green-100 text-green-700' }}">
+                        {{ $safra->data_fim ? 'Concluída' : 'Em andamento' }}
+                    </span>
+                </div>
+
+                <div class="flex flex-col gap-1 text-xs text-gray-600 bg-gray-50 p-2.5 rounded-lg border border-gray-100">
+                    <div class="flex justify-between">
+                        <span class="font-medium text-gray-500">Início:</span>
+                        <span class="font-semibold">{{ \Carbon\Carbon::parse($safra->data_inicio)->format('d/m/Y') }}</span>
+                    </div>
+                    @if($safra->data_fim)
+                    <div class="flex justify-between mt-1 pt-1 border-t border-gray-200/60">
+                        <span class="font-medium text-gray-500">Fim:</span>
+                        <span class="font-semibold">{{ \Carbon\Carbon::parse($safra->data_fim)->format('d/m/Y') }}</span>
+                    </div>
+                    @endif
+                </div>
+                
+                @can('is-admin')
+                <div class="mt-3 pt-3 border-t border-gray-100 flex items-center gap-2">
+                    @php
+                        $nomeProd = $safra->produtor->nome ?? 'N/A';
+                        $primeiraLetra = $nomeProd !== 'N/A' ? strtoupper(substr($nomeProd, 0, 1)) : '?';
+                    @endphp
+                    <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-[10px] font-bold text-gray-600 shrink-0">
+                        {{ $primeiraLetra }}
+                    </div>
+                    <span class="text-xs text-gray-500 font-medium">{{ $nomeProd }}</span>
+                </div>
+                @endcan
+            </div>
+            @empty
+            <div class="p-8 text-center bg-white rounded-xl border border-dashed border-gray-200">
+                <p class="text-sm font-medium text-gray-500">Nenhuma safra cadastrada.</p>
+            </div>
+            @endforelse
+        </div>
+        <div class="px-6 py-4 bg-white border-t border-gray-100 mt-4 rounded-b-xl">
+            {{ $safras->links() }}
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Mapa de Plantio -->
+<div id="modalMapaPlantio" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); z-index: 999999;">
+    <!-- Botão Fechar -->
+    <button type="button" onclick="fecharMapaPlantio()" style="position: absolute; top: 20px; right: 20px; z-index: 1000000; background: rgba(255, 255, 255, 0.2); color: #fff; border: 2px solid #fff; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s;" class="hover:bg-white/30 focus:outline-none focus:bg-white/30">
+        X
+    </button>
+    <!-- Iframe Google Maps -->
+    <iframe 
+        id="iframeGoogleMaps"
+        src="" 
+        style="width: 100%; height: 100%; border: none;" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+<script>
+    function abrirMapaPlantio(evento, coordenadas) {
+        evento.preventDefault();
+        
+        // Limpar possíveis espaços e montar a URL do iframe
+        const urlMap = "https://maps.google.com/maps?q=" + coordenadas.trim() + "&t=k&z=16&output=embed";
+        document.getElementById('iframeGoogleMaps').src = urlMap;
+        
+        document.getElementById('modalMapaPlantio').style.display = 'block';
+        document.body.style.overflow = 'hidden'; 
+    }
+
+    function fecharMapaPlantio() {
+        document.getElementById('modalMapaPlantio').style.display = 'none';
+        document.getElementById('iframeGoogleMaps').src = ""; // Limpa para economizar recurso
+        document.body.style.overflow = 'auto'; 
+    }
+</script>
+
+@endsection
